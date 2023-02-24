@@ -6,10 +6,10 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.layout.LayoutCoordinates
 
 @Composable
-fun rememberInstagramLikeZoomableState(): ZoomableState = remember { InstagramLikeZoomableState() }
+fun rememberInstagramLikeZoomableState(): InstagramLikeZoomableState = remember { InstagramLikeZoomableState() }
 
 @Composable
-fun rememberInstagramLikeZoomableState(key: Any?): ZoomableState =
+fun rememberInstagramLikeZoomableState(key: Any?): InstagramLikeZoomableState =
     remember(key) { InstagramLikeZoomableState() }
 
 private const val animationDurationMillis = 200
@@ -33,10 +33,7 @@ class InstagramLikeZoomableState : ZoomableState {
         pan: Offset,
         zoom: Float
     ) {
-        val layoutSize = layoutCoordinates?.size
-        if (layoutSize == null) {
-            return
-        }
+        val layoutSize = layoutCoordinates?.size ?: return
 
         if (isAnimationRunning) {
             return

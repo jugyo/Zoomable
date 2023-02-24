@@ -21,5 +21,6 @@
         </activity>
 
         <activity android:name="org.jugyo.zoomable.sample.InstagramLikeZoomableActivity" />
+        <activity android:name="org.jugyo.zoomable.sample.BasicZoomableActivity" />
     </application>
 </manifest>

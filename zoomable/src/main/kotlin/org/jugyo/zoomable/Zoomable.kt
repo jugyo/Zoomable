@@ -1,5 +1,6 @@
 package org.jugyo.zoomable
 
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
@@ -48,6 +49,13 @@ fun Zoomable(
                         }
                     )
                 }
+                .pointerInput(Unit) {
+                    detectTapGestures(onDoubleTap = {
+                        scope.launch {
+                            state.onDoubleTap(it)
+                        }
+                    })
+                }
                 .onGloballyPositioned(state::onGloballyPositioned),
             content = content
         )
@@ -59,7 +67,8 @@ interface ZoomableState {
     val scale: Float
     val isZooming: Boolean
     suspend fun onZoom(centroid: Offset, pan: Offset, zoom: Float)
-    suspend fun onRelease()
+    suspend fun onRelease() {}
+    suspend fun onDoubleTap(position: Offset) {}
     fun onGloballyPositioned(layoutCoordinates: LayoutCoordinates)
 }
 
