@@ -40,14 +40,13 @@ fun Screen() {
                     modifier = Modifier
                         .fillMaxSize()
                         .background(Color.LightGray),
-                    contentDescription = "Photo 1"
+                    contentDescription = "Photo $index"
                 )
             }
         }
     }
 }
 ```
-
 
 <img src="https://github.com/jugyo/Zoomable/blob/main/screenshots/BasicZoomableSample.gif?raw=true" width="460">
 
@@ -85,14 +84,13 @@ fun Screen() {
                         modifier = Modifier
                             .fillMaxSize()
                             .background(Color.LightGray),
-                        contentDescription = "Photo 1"
+                        contentDescription = "Photo $index"
                     )
                 }
             }
         }
     }
 }
-
 ```
 
 <img src="https://github.com/jugyo/Zoomable/blob/main/screenshots/InstagramLikeZoomableSample.gif?raw=true" width="460">

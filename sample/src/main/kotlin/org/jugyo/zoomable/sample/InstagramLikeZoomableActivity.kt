@@ -64,7 +64,7 @@ private fun Screen() {
                         modifier = Modifier
                             .fillMaxSize()
                             .background(Color.LightGray),
-                        contentDescription = "Photo 1"
+                        contentDescription = "Photo $index"
                     )
                 }
             }
