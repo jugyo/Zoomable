@@ -46,7 +46,7 @@ private fun Screen() {
         R.drawable.sample4,
     )
 
-    val zoomableStates = images.mapIndexed { index, _ ->
+    val zoomableStates = List(images.size) { index ->
         rememberBasicZoomableState(index)
     }
 

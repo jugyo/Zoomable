@@ -42,7 +42,7 @@ private fun Screen() {
         R.drawable.sample3,
         R.drawable.sample4,
     )
-    val zoomableStates = images.mapIndexed { index, _ ->
+    val zoomableStates = List(images.size) { index ->
         rememberInstagramLikeZoomableState(index)
     }
 
